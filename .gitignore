@@ -1,0 +1,13 @@
+# 本地面试准备文件（不上传 GitHub）
+interview_notes.md
+
+# 本地密钥
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Godot 编辑器元数据
+*.uid
+.godot/
