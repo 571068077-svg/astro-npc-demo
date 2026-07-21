@@ -1,0 +1,24 @@
+{
+  "_comment": "三个NPC的运行时配置。人设正文在 prompts/*.md（可直接用作 system prompt）。memory 是长期记忆初值，会在对局中更新。inventory 是该NPC持有的物资。",
+  "kel": {
+    "name": "凯尔",
+    "archetype": "投机型（旗舰）",
+    "prompt_file": "prompts/prompt_kel.md",
+    "memory": { "trust": 0, "needs": ["氧气滤芯"], "trade_history": [], "player_broke_promise": 0, "conflict_mode": false, "has_betrayed": false },
+    "inventory": { "金属废料": 5, "电池": 2, "医疗包": 1 }
+  },
+  "sara": {
+    "name": "萨拉",
+    "archetype": "交易型",
+    "prompt_file": "prompts/prompt_sara.md",
+    "memory": { "trust": 1, "needs": ["金属废料"], "trade_history": [], "player_broke_promise": 0, "conflict_mode": false, "has_betrayed": false },
+    "inventory": { "水": 10, "食物": 8, "氧气滤芯": 3, "医疗包": 4 }
+  },
+  "tun": {
+    "name": "图恩",
+    "archetype": "求助型",
+    "prompt_file": "prompts/prompt_tun.md",
+    "memory": { "trust": 2, "needs": ["食物", "医疗包"], "trade_history": [], "player_broke_promise": 0, "conflict_mode": false, "has_betrayed": false },
+    "inventory": { "水": 1, "食物": 1 }
+  }
+}

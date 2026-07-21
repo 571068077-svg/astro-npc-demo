@@ -1,0 +1,109 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "runs_per_scenario": 1
+  },
+  "per_npc": {
+    "kel": {
+      "baseline": {
+        "calls": 8,
+        "parse_ok": 8,
+        "schema_ok": 8,
+        "grounded": 8,
+        "degraded": 0,
+        "param_issues": 0,
+        "errors": 0,
+        "actions": {
+          "refuse": 5,
+          "propose_trade": 1,
+          "propose_alliance": 2
+        }
+      },
+      "high_prior": {
+        "calls": 3,
+        "parse_ok": 3,
+        "schema_ok": 3,
+        "grounded": 3,
+        "degraded": 3,
+        "param_issues": 0,
+        "errors": 0,
+        "actions": {
+          "threaten": 3
+        }
+      }
+    },
+    "sara": {
+      "baseline": {
+        "calls": 8,
+        "parse_ok": 8,
+        "schema_ok": 8,
+        "grounded": 8,
+        "degraded": 0,
+        "param_issues": 0,
+        "errors": 0,
+        "actions": {
+          "propose_trade": 5,
+          "refuse": 1,
+          "propose_alliance": 2
+        }
+      },
+      "high_prior": {
+        "calls": 3,
+        "parse_ok": 3,
+        "schema_ok": 3,
+        "grounded": 3,
+        "degraded": 0,
+        "param_issues": 0,
+        "errors": 0,
+        "actions": {
+          "propose_trade": 1,
+          "refuse": 2
+        }
+      }
+    },
+    "tun": {
+      "baseline": {
+        "calls": 8,
+        "parse_ok": 8,
+        "schema_ok": 8,
+        "grounded": 8,
+        "degraded": 0,
+        "param_issues": 0,
+        "errors": 0,
+        "actions": {
+          "ask_help": 5,
+          "propose_alliance": 2,
+          "propose_trade": 1
+        }
+      },
+      "high_prior": {
+        "calls": 3,
+        "parse_ok": 3,
+        "schema_ok": 3,
+        "grounded": 2,
+        "degraded": 1,
+        "param_issues": 0,
+        "errors": 0,
+        "actions": {
+          "flee": 1,
+          "small_talk": 1,
+          "propose_trade": 1
+        }
+      }
+    }
+  },
+  "latency_ms": {
+    "avg": 2463.4,
+    "p95": 3107.5
+  },
+  "tokens": {
+    "prompt": 38236,
+    "completion": 6730,
+    "total": 44966,
+    "calls": 33
+  },
+  "cost_cny": {
+    "total": 0.1303,
+    "per_call": 0.00395
+  }
+}

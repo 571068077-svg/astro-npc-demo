@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://camp_main"]
+
+[ext_resource type="Script" path="res://scripts/scene_main.gd" id="1_main"]
+
+[node name="CampScene" type="Control"]
+script = ExtResource("1_main")

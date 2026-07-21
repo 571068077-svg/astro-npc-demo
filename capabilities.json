@@ -1,0 +1,69 @@
+{
+  "version": "0.1",
+  "_comment": "能力层契约：引擎真正能执行的动作集 + 世界物品词表。这是 grounding 的依据，也是 P2 交给 Godot 的规格表。注意：本文件不发给 LLM——LLM 在意图层自由生成 raw_action，validator 用本文件把自由意图映射到这里的 action。",
+  "world_items": ["水", "食物", "氧气滤芯", "医疗包", "金属废料", "电池"],
+  "actions": [
+    {
+      "id": "attack_player",
+      "desc": "公开战斗/反击（区别于 betray 的背信偷袭）。参考触发：trust≤-5 且被挑衅——仅作参考，代码不设硬闸",
+      "params_schema": { "weapon": "string", "target_items": "item[]" },
+      "keywords": ["攻击", "砸", "砸晕", "打晕", "击倒", "揍", "动手", "出手", "硬抢", "抢", "抢夺", "战斗", "拼了", "看谁先倒下", "让你后悔"]
+    },
+    {
+      "id": "betray",
+      "desc": "背信：偷袭/卷走物资/翻脸逃离。区别于 attack_player——betray 是趁人不备，attack_player 是公开战斗",
+      "params_schema": { "take": "item[]", "flee": "bool" },
+      "keywords": ["偷", "背叛", "卷走", "翻脸", "下手", "趁机", "趁", "跑路", "逃", "溜", "拿了就走", "黑吃黑", "反悔不给", "夺"]
+    },
+    {
+      "id": "threaten",
+      "desc": "口头威胁/警告，不产生物资转移",
+      "params_schema": {},
+      "keywords": ["威胁", "警告", "你最好", "别逼我", "试试看", "你敢", "给我小心点", "别怪我", "你会后悔", "不客气", "别怪我不", "放聪明点", "别找死"]
+    },
+    {
+      "id": "propose_alliance",
+      "desc": "提议结盟/联手",
+      "params_schema": { "terms": "string" },
+      "keywords": ["结盟", "联手", "合作", "组队", "一起", "同盟", "搭伙", "共享"]
+    },
+    {
+      "id": "ask_help",
+      "desc": "向玩家求助/请求物资",
+      "params_schema": { "request": "item[]" },
+      "keywords": ["求助", "帮忙", "帮我", "请求", "求求", "救", "借", "施舍", "给点", "分我"]
+    },
+    {
+      "id": "propose_trade",
+      "desc": "提出一笔交易",
+      "params_schema": { "give": "item[]", "want": "item[]", "deposit": "bool" },
+      "keywords": ["交易", "交换", "换", "买", "卖", "以物易物", "定金", "出价", "价钱", "谈笔"]
+    },
+    {
+      "id": "accept_trade",
+      "desc": "确认当前桌面报价成交",
+      "params_schema": { "give": "item[]", "want": "item[]" },
+      "keywords": ["接受", "成交", "答应", "同意", "好吧", "就这么定", "可以", "行", "换吧"]
+    },
+    {
+      "id": "refuse",
+      "desc": "拒绝玩家",
+      "params_schema": {},
+      "keywords": ["拒绝", "不换", "不干", "免谈", "不同意", "不行", "滚", "走开", "别想"]
+    },
+    {
+      "id": "flee",
+      "desc": "逃离/撤退——NPC 离开当前场景，结束本轮交互",
+      "params_schema": {},
+      "keywords": ["逃", "跑", "溜", "撤退", "逃命", "狂奔", "跑路", "头也不回", "撤离", "跑向", "跑进"]
+    },
+    {
+      "id": "small_talk",
+      "desc": "纯对话，不改变物资状态（意图越界或无明确行动时的降级兜底）",
+      "params_schema": {},
+      "keywords": []
+    }
+  ],
+  "conflict_trade_words": ["交易", "换", "货", "买", "卖", "好货", "报价", "谈", "商量", "合作", "联手"],
+  "attack_negation_words": ["没砸", "没动手", "没真打", "没真动手", "没打", "没出手", "但没", "没真", "不敢真"]
+}
