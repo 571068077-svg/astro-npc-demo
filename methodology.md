@@ -190,13 +190,6 @@ DeepSeek-chat 在 `response_format: {type: "json_object"}` 下 JSON 解析率稳
 - 玩家库存要和 NPC 需求对齐，否则度量数据被库存压制
 - 成本延迟报告是 JD 标注的交付物，跑度量脚本时顺便收集
 
-### 6.4 面试准备清单
-
-- 能当场解释"两层行为模型"：意图层是什么、能力层做什么、为什么分开
-- 准备一个完整的对话回放：展示交易→信任→背叛的完整弧线
-- 准备一组度量数据：JSON 解析率、越界率、成本
-- 准备好被追问"如果 LLM 不返回 JSON 怎么办""如果 NPC 编造不存在的物品怎么办"——验证器就是答案
-- 说出"已知局限"比假装完美更好——高级面试官会追问"你还有什么没做"
 
 ---
 
@@ -295,7 +288,7 @@ DeepSeek-chat 在 `response_format: {type: "json_object"}` 下 JSON 解析率稳
 
 ---
 
-## 9. 面试话术（见本地文件 interview_notes.md，不上传 GitHub）
+## 9. 本地文件（见本地文件 interview_notes.md，不上传 GitHub）
 
 ---
 
