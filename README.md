@@ -84,4 +84,7 @@ python test_stability.py      # 生成度量报告
 
 ---
 
-> **演示视频**：[占位——待录制后替换为实际链接]
+## 演示视频
+[AI-NPC Demo v1.0 - 演示视频](https://github.com/571068077-svg/astro-npc-demo/releases/tag/v1.0)
+
+展示完整流程：正常交易 → 信任下降 → 冲突触发 → 指标展示
